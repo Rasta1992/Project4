@@ -7,10 +7,13 @@ import API from "./utils/API";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
 
+
 class App extends Component {
   state = {
-    recipes: [],
-    recipeSearch: ""
+    username: "",
+    password: "",
+    firstName: "",
+    lastName: ""
   };
 
   handleInputChange = event => {
@@ -43,10 +46,28 @@ class App extends Component {
                   <Row>
                     <Col size="xs-9 sm-10">
                       <Input
-                        name="recipeSearch"
-                        value={this.state.recipeSearch}
+                        name="username"
+                        value={this.state.username}
                         onChange={this.handleInputChange}
-                        placeholder="Search For a Recipe"
+                        placeholder="Username"
+                      />
+                      <Input
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.handleInputChange}
+                        placeholder="Password"
+                      />
+                      <Input
+                        name="firstName"
+                        value={this.state.firstName}
+                        onChange={this.handleInputChange}
+                        placeholder="First Name"
+                      />
+                      <Input
+                        name="lastName"
+                        value={this.state.lastName}
+                        onChange={this.handleInputChange}
+                        placeholder="Last Name"
                       />
                     </Col>
                     <Col size="xs-3 sm-2">
@@ -55,35 +76,17 @@ class App extends Component {
                         type="success"
                         className="input-lg"
                       >
-                        Search
+                        Sign Up!
                       </Button>
                     </Col>
                   </Row>
+
+                  
                 </Container>
               </form>
             </Col>
           </Row>
-          <Row>
-            <Col size="xs-12">
-              {!this.state.recipes.length ? (
-                <h1 className="text-center">No Recipes to Display</h1>
-              ) : (
-                <RecipeList>
-                  {this.state.recipes.map(recipe => {
-                    return (
-                      <RecipeListItem
-                        key={recipe.title}
-                        title={recipe.title}
-                        href={recipe.href}
-                        ingredients={recipe.ingredients}
-                        thumbnail={recipe.thumbnail}
-                      />
-                    );
-                  })}
-                </RecipeList>
-              )}
-            </Col>
-          </Row>
+          
         </Container>
       </div>
     );
