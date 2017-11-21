@@ -6,6 +6,9 @@ import Button from "./components/Button";
 import API from "./utils/API";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
+import User from "./models/User.js"
+// Database //
+const mongoose = require("mongoose");
 
 
 class App extends Component {
@@ -28,9 +31,9 @@ class App extends Component {
   handleFormSubmit = event => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
-    API.getRecipes(this.state.recipeSearch)
-      .then(res => this.setState({ recipes: res.data }))
-      .catch(err => console.log(err));
+    console.log(this.state.username);
+    console.log(this.state.password);
+    
   };
 
   render() {
@@ -81,7 +84,7 @@ class App extends Component {
                     </Col>
                   </Row>
 
-                  
+
                 </Container>
               </form>
             </Col>

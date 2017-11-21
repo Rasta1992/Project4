@@ -7,7 +7,7 @@ const Jumbotron = () => (
     <a
       target="_blank"
       rel="noopener noreferrer"
-      href="http://www.recipepuppy.com/about/api/"
+      href="#"
     >
       Built by
        Shamar Orr
