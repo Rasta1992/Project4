@@ -1,23 +1,16 @@
-const mongoose = require ("mongoose");
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 
 
 var UserSchema = new Schema({
-  // `username` must be of type String
-  // `username` will trim leading and trailing whitespace before it's saved
-  // `username` is a required field and throws a custom error message if not supplied
-  username: {
+   username: {
     type: String,
     trim: true,
     required: "Username is Required"
   },
-  // `password` must be of type String
-  // `password` will trim leading and trailing whitespace before it's saved
-  // `password` is a required field and throws a custom error message if not supplied
-  // `password` uses a custom validation function to only accept values 6 characters or more
-  password: {
+    password: {
     type: String,
     trim: true,
     required: "Password is Required",
@@ -28,9 +21,6 @@ var UserSchema = new Schema({
       "Password should be longer."
     ]
   },
-  // `email` must be of type String
-  // `email` must be unique
-  // `email` must match the regex pattern below and throws a custom error message if it does not
   email: {
     type: String,
     unique: true,

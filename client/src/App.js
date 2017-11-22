@@ -3,13 +3,8 @@ import Jumbotron from "./components/Jumbotron";
 import Nav from "./components/Nav";
 import Input from "./components/Input";
 import Button from "./components/Button";
-import API from "./utils/API";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
-import User from "./models/User.js"
-// Database //
-const mongoose = require("mongoose");
-
 
 class App extends Component {
   state = {
