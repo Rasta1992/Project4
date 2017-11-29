@@ -1,16 +1,39 @@
-const mongoose = require "mongoose";
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 
 
-const userSchema = new Schema({
-	username: String,
-	password: String,
-	firstName: String,
-	lastName: String
+var UserSchema = new Schema({
+   username: {
+    type: String,
+    trim: true,
+    required: "Username is Required"
+  },
+    password: {
+    type: String,
+    trim: true,
+    required: "Password is Required",
+    validate: [
+      function(input) {
+        return input.length >= 6;
+      },
+      "Password should be longer."
+    ]
+  },
+  email: {
+    type: String,
+    unique: true,
+    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+  },
+  // `date` must be of type Date. The default value is the current date
+  userCreated: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-User.plugin(passportLocalMongoose);
+var User = mongoose.model("User", UserSchema);
 
-module.exports = mongoose.model('User', User);
+// Export the User model
+module.exports = User;

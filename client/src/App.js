@@ -3,10 +3,8 @@ import Jumbotron from "./components/Jumbotron";
 import Nav from "./components/Nav";
 import Input from "./components/Input";
 import Button from "./components/Button";
-import API from "./utils/API";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
-
 
 class App extends Component {
   state = {
@@ -28,9 +26,9 @@ class App extends Component {
   handleFormSubmit = event => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
-    API.getRecipes(this.state.recipeSearch)
-      .then(res => this.setState({ recipes: res.data }))
-      .catch(err => console.log(err));
+    console.log(this.state.username);
+    console.log(this.state.password);
+    
   };
 
   render() {
@@ -81,7 +79,7 @@ class App extends Component {
                     </Col>
                   </Row>
 
-                  
+
                 </Container>
               </form>
             </Col>
