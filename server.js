@@ -19,13 +19,13 @@ app.use(bodyParser.json());
 app.use("/api", apiRoutes);
 
 // Configure Passport
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 //
 
 mongoose.Promise = global.Promise;
-mongoose.connect("", {
+mongoose.connect("mongodb://localserver", {
    useMongoClient: true
 });
 

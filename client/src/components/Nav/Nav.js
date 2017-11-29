@@ -30,7 +30,7 @@ const Nav = () => (
                     <a href="/AboutUs" className="navbar-brand">About Us</a>
                 </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
+        </div> 
       </div>
     </div>
   </nav>
