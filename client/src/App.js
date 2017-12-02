@@ -5,6 +5,9 @@ import Input from "./components/Input";
 import Button from "./components/Button";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
+import UserLogin from "./components/UserLogin"; 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NoMatch from "./components/NoMatch";
 
 class App extends Component {
   state = {
@@ -32,62 +35,18 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <Nav />
-        <Jumbotron />
-        <Container>
-          <Row>
-            <Col size="md-12">
-              <form>
-                <Container>
-                  <Row>
-                    <Col size="xs-9 sm-10">
-                      <Input
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.handleInputChange}
-                        placeholder="Username"
-                      />
-                      <Input
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handleInputChange}
-                        placeholder="Password"
-                      />
-                      <Input
-                        name="firstName"
-                        value={this.state.firstName}
-                        onChange={this.handleInputChange}
-                        placeholder="First Name"
-                      />
-                      <Input
-                        name="lastName"
-                        value={this.state.lastName}
-                        onChange={this.handleInputChange}
-                        placeholder="Last Name"
-                      />
-                    </Col>
-                    <Col size="xs-3 sm-2">
-                      <Button
-                        onClick={this.handleFormSubmit}
-                        type="success"
-                        className="input-lg"
-                      >
-                        Sign Up!
-                      </Button>
-                    </Col>
-                  </Row>
-
-
-                </Container>
-              </form>
-            </Col>
-          </Row>
-          
-        </Container>
+    return (<div> 
+      <Nav/>
+     <Router>
+        <div>      
+          <Switch>
+            <Route exact path="/" component={UserLogin} />       
+            <Route component={NoMatch} />
+          </Switch>
       </div>
-    );
+    </Router>
+      </div>
+    );    
   }
 }
 
