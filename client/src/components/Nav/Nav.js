@@ -28,7 +28,7 @@ const Nav = () => (<Router>
                 </ul>
             </li>
             <li><Link to="/Settings" className="navbar-brand">Settings</Link></li>
-            <li><Link to="/LinkboutUs" className="navbar-brand">About Us</Link></li>
+            <li><Link to="/AboutUs" className="navbar-brand">About Us</Link></li>
         </ul>
       </div>
     </div>
