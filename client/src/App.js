@@ -8,6 +8,8 @@ import { Container, Row, Col } from "./components/Grid";
 import UserLogin from "./components/UserLogin"; 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./components/NoMatch";
+import Purchase from "./components/Purchase";
+
 
 class App extends Component {
   state = {
@@ -40,7 +42,11 @@ class App extends Component {
      <Router>
         <div>      
           <Switch>
-            <Route exact path="/" component={UserLogin} />       
+          <Route exact path="/Purchase" component={Purchase}/>  
+            <Route exact path="/" 
+                  render={()=><UserLogin username={this.state.username}  
+                      password={this.state.password}                       
+                      />} />              
             <Route component={NoMatch} />
           </Switch>
       </div>

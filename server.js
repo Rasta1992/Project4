@@ -9,6 +9,7 @@ const User = require('./models/user');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
+
 // Serve up static assets
 app.use(express.static("client/build"));
 
