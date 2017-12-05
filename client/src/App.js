@@ -37,10 +37,11 @@ class App extends Component {
   };
 
   render() {
-    return (<div> 
+    return (<Router>
+      <div> 
       <Nav />
-     <Router>
-        <div>      
+     
+        <div>     
           <Switch>
           <Route exact path="/Purchase" component={Purchase}/>  
             <Route exact path="/" 
@@ -50,9 +51,10 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
       </div>
-    </Router>
+    
 
       </div>
+      </Router>
     );    
   }
 }

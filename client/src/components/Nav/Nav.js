@@ -2,7 +2,7 @@ import React from "react";
 import "./Nav.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-const Nav = () => (<Router>
+const Nav = () => (
   <nav className="navbar navbar-inverse navbar-top">
     <div className="container-fluid">
 
@@ -34,7 +34,7 @@ const Nav = () => (<Router>
     </div>
    
   </nav>
-</Router>
+
 );
 
 export default Nav;
