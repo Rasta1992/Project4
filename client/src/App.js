@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {
     return (<div> 
-      <Nav/>
+      <Nav />
      <Router>
         <div>      
           <Switch>
@@ -51,6 +51,7 @@ class App extends Component {
           </Switch>
       </div>
     </Router>
+
       </div>
     );    
   }

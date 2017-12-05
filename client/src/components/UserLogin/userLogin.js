@@ -3,17 +3,19 @@ import Jumbotron from "../Jumbotron";
 import Input from "../Input";
 import Button from "../Button";
 import { Container, Row, Col } from "../Grid";
+import Purchase from "../Purchase";
 
 const UserLogin = props => 
 	<div> 
 		<Jumbotron />
+		<Purchase />
 	        <Container>
 	          <Row>
 	            <Col size="md-12">
 	              <form>
 	                <Container>
 	                  <Row>
-	                    <Col size="xs-9 sm-10">
+	                    <Col size="xs-9 sm-5">
 	                      <Input
 	                        name="username"
 	                        value={props.username}
@@ -26,20 +28,10 @@ const UserLogin = props =>
 	                        onChange={props.handleInputChange}
 	                        placeholder="Password"
 	                      />
-	                      <Input
-	                        name="firstName"
-	                        value={props.firstName}
-	                        onChange={props.handleInputChange}
-	                        placeholder="First Name"
-	                      />
-	                      <Input
-	                        name="lastName"
-	                        value={props.lastName}
-	                        onChange={props.handleInputChange}
-	                        placeholder="Last Name"
-	                      />
 	                    </Col>
-	                    <Col size="xs-3 sm-2">
+	                  </Row>
+	                  <Row>
+	                  	<Col size="xs-3 sm-2">
 	                      <Button
 	                        onClick={this.handleFormSubmit}
 	                        type="success"
