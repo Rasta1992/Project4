@@ -17,7 +17,9 @@ const Jumbotron = () => (
       href="#">
       Designed by :
       Shamar Orr,
+      
       Thomas Duell,
+
       Joe Fuentes
 
       </a>

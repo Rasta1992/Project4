@@ -17,6 +17,7 @@ const UserLogin = props =>
 	                  <Row>
 	                    <Col size="xs-9 sm-5">
 	                      <Input
+	                      	
 	                        name="username"
 	                        value={props.username}
 	                        onChange={props.handleInputChange}

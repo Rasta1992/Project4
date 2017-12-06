@@ -45,7 +45,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/Purchase" component={Purchase}/>  
             <Route exact path="/" 
-                  render={()=><UserLogin username={this.state.username}  
+                  render={()=><UserLogin handleInputChange={this.handleInputChange} username={this.state.username}  
                       password={this.state.password}                       
                       />} />              
             <Route component={NoMatch} />

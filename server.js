@@ -26,7 +26,7 @@ app.use("/api", apiRoutes);
 //
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localserver", {
+mongoose.connect("mongodb://localserver/Boxdb", {
    useMongoClient: true
 });
 
@@ -38,15 +38,15 @@ app.get("*", function(req, res) {
 
 
 
-//app.post("/submit", function(req, res){
-	//db.User
-	//.create(req.body)
-	//.then(function(dbUser) {
-	//	res.json(dbUser);
-	//})
-	//.catch(function(err) {
-	//	res.json(err);
-	//});
+app.post("/submit", function(req, res){
+	db.User
+	.create(req.body)
+	.then(function(dbUser) {
+		res.json(dbUser);
+	})
+	.catch(function(err) {
+		res.json(err);
+	});
 });
 
 
