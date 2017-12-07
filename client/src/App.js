@@ -3,12 +3,15 @@ import Jumbotron from "./components/Jumbotron";
 import Nav from "./components/Nav";
 import Input from "./components/Input";
 import Button from "./components/Button";
-import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
 import UserLogin from "./components/UserLogin"; 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import NoMatch from "./components/NoMatch";
-import Purchase from "./components/Purchase";
+import HomePage from "./pages/HomePage";
+import Purchase from "./pages/Purchase";
+// import Production from "./pages/Production";
+import Support from "./pages/Support";
+import Staffing from "./pages/Staffing";
 
 
 class App extends Component {
@@ -39,22 +42,19 @@ class App extends Component {
   render() {
     return (<Router>
       <div> 
-      <Nav />
-     
-        <div>     
+        <Nav/>
+        <div>      
           <Switch>
-          <Route exact path="/Purchase" component={Purchase}/>  
-            <Route exact path="/" 
-                  render={()=><UserLogin handleInputChange={this.handleInputChange} username={this.state.username}  
-                      password={this.state.password}                       
-                      />} />              
+            <Route exact path="/" component={UserLogin}/>
+            <Route exact path="/Purchase" component={Purchase}/>
+            {/* <Route exact path="/Production" component={Production}/> */}
+            <Route exact path="/Support" component={Support}/>
+            <Route exact path="/Staffing" component={Staffing}/>
             <Route component={NoMatch} />
           </Switch>
-      </div>
-    
-
-      </div>
-      </Router>
+        </div>
+        </div>
+            </Router>
     );    
   }
 }

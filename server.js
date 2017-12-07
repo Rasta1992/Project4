@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const apiRoutes = require("./routes/apiRoutes");
-const db = require('./models/');
+const routes = require("./routes");
+const db = require("./models");
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -17,7 +17,7 @@ app.use(express.static("client/build"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Use apiRoutes
-app.use("/api", apiRoutes);
+app.use(routes);
 
 // Configure Passport
 // passport.use(new LocalStrategy(User.authenticate()));
@@ -26,8 +26,9 @@ app.use("/api", apiRoutes);
 //
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localserver/Boxdb", {
-   useMongoClient: true
+mongoose.connect(
+	process.env.MONGODB_URI || "mongodb://localhost/boxdb", {
+	  useMongoClient: true
 });
 
 // Send every request to the React app
@@ -38,16 +39,16 @@ app.get("*", function(req, res) {
 
 
 
-app.post("/submit", function(req, res){
-	db.User
-	.create(req.body)
-	.then(function(dbUser) {
-		res.json(dbUser);
-	})
-	.catch(function(err) {
-		res.json(err);
-	});
-});
+//app.post("/submit", function(req, res){
+	//db.User
+	//.create(req.body)
+	//.then(function(dbUser) {
+	//	res.json(dbUser);
+	//})
+	//.catch(function(err) {
+	//	res.json(err);
+	//});
+//});
 
 
 

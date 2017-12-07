@@ -1,14 +1,10 @@
 import React from "react";
-import Jumbotron from "../Jumbotron";
 import Input from "../Input";
 import Button from "../Button";
 import { Container, Row, Col } from "../Grid";
-import Purchase from "../Purchase";
 
 const UserLogin = props => 
 	<div> 
-		<Jumbotron />
-		<Purchase />
 	        <Container>
 	          <Row>
 	            <Col size="md-12">
@@ -17,7 +13,6 @@ const UserLogin = props =>
 	                  <Row>
 	                    <Col size="xs-9 sm-5">
 	                      <Input
-	                      	
 	                        name="username"
 	                        value={props.username}
 	                        onChange={props.handleInputChange}
