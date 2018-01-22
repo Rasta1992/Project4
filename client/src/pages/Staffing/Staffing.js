@@ -61,9 +61,9 @@ class Staffing extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
+            {/* <Jumbotron> */}
               <h1>Enter New Employee Information</h1>
-            </Jumbotron>
+            {/* </Jumbotron> */}
             <form>
               <Input
                 value={this.state.memberName}
